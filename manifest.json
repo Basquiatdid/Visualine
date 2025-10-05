@@ -1,0 +1,14 @@
+{
+  "name": "Visualine",
+  "id": "visualine-compatibility-scanner",
+  "api": "1.0.0",
+  "main": "code.js",
+  "ui": "index.html",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "documentAccess": "dynamic",
+  "editorType": ["figma"],
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  }
+}
