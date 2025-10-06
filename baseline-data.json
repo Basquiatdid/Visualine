@@ -1,0 +1,20 @@
+{
+  "tokens": {
+    "primary/50": { "value": "#FFF5F7", "availability": "widely", "note": "Light primary tint" },
+    "primary/100": { "value": "#FFE4EA", "availability": "widely", "note": "Primary background" },
+    "primary/300": { "value": "#FF7CA1", "availability": "widely", "note": "Primary soft" },
+    "primary/500": { "value": "#FF3366", "availability": "widely", "note": "Primary brand color" },
+    "primary/700": { "value": "#C0244B", "availability": "widely", "note": "Primary dark" },
+    "neutral/10": { "value": "#0A0A0B", "availability": "widely", "note": "Text - high contrast" },
+    "neutral/50": { "value": "#111214", "availability": "widely", "note": "Text - default" },
+    "neutral/100": { "value": "#F5F5F7", "availability": "widely", "note": "Surface background" },
+    "neutral/300": { "value": "#CFCFD4", "availability": "widely", "note": "Borders and dividers" },
+    "accent/blue": { "value": "#007BFF", "availability": "limited", "note": "Older Android WebView quirks" },
+    "accent/teal": { "value": "#14B8A6", "availability": "widely", "note": "Accent / CTA" },
+    "success/500": { "value": "#10B981", "availability": "widely", "note": "Success state" },
+    "warning/500": { "value": "#F59E0B", "availability": "widely", "note": "Warning state" },
+    "danger/500": { "value": "#DC2626", "availability": "widely", "note": "Error state" },
+    "glass/blur": { "value": "#FFFFFF", "availability": "limited", "note": "Backdrop-filter blur limited on older browsers" },
+    "lab/sample": { "value": "#E0D8FF", "availability": "limited", "note": "CSS Color 4 Lab/LCH support varies" }
+  }
+}

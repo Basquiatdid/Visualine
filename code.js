@@ -264,12 +264,33 @@ async function getBaselineData() {
   // For now, return static data
   return {
     tokens: {
-      "primary/500": { "value": "#FF0000", "availability": "widely", "note": "Core brand color" },
-      "neutral/100": { "value": "#F5F5F5", "availability": "widely", "note": "Background surfaces" },
-      "accent/blue": { "value": "#007BFF", "availability": "limited", "note": "Older Android WebView issues" },
-      "danger/500": { "value": "#DC2626", "availability": "widely", "note": "Error states" },
-      "warning/500": { "value": "#F59E0B", "availability": "widely", "note": "Warning states" },
-      "success/500": { "value": "#10B981", "availability": "widely", "note": "Success states" }
+      // Primary brand colors
+      "primary/50":   { "value": "#FFF5F7", "availability": "widely",  "note": "Light tint" },
+      "primary/100":  { "value": "#FFE4EA", "availability": "widely",  "note": "Soft background" },
+      "primary/300":  { "value": "#FF7CA1", "availability": "widely",  "note": "Accent shade" },
+      "primary/500":  { "value": "#FF3366", "availability": "widely",  "note": "Main brand" },
+      "primary/700":  { "value": "#C0244B", "availability": "widely",  "note": "Dark brand" },
+
+      // Neutral grays
+      "neutral/50":   { "value": "#FAFAFA", "availability": "widely",  "note": "Light bg" },
+      "neutral/100":  { "value": "#F5F5F5", "availability": "widely",  "note": "Surface bg" },
+      "neutral/300":  { "value": "#D4D4D8", "availability": "widely",  "note": "Border" },
+      "neutral/700":  { "value": "#374151", "availability": "widely",  "note": "Text dark" },
+
+      // Accent colors
+      "accent/blue":  { "value": "#007BFF", "availability": "limited", "note": "Some old browsers" },
+      "accent/teal":  { "value": "#14B8A6", "availability": "widely",  "note": "Highlight" },
+      "accent/purple":{ "value": "#8B5CF6", "availability": "widely",  "note": "Highlight" },
+
+      // Semantic states
+      "success/500":  { "value": "#10B981", "availability": "widely",  "note": "Success" },
+      "warning/500":  { "value": "#F59E0B", "availability": "widely",  "note": "Warning" },
+      "danger/500":   { "value": "#DC2626", "availability": "widely",  "note": "Error" },
+      "info/500":     { "value": "#3B82F6", "availability": "widely",  "note": "Info" },
+
+      // Special cases
+      "glass/blur":   { "value": "#FFFFFF", "availability": "limited", "note": "Backdrop blur" },
+      "lab/lch":      { "value": "#E0D8FF", "availability": "limited", "note": "New color format" }
     }
   };
 }
