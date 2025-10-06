@@ -2,13 +2,13 @@ console.log("✅ Visualine main.js loaded successfully");
 
 figma.showUI(__html__, { width: 340, height: 500 });
 
-// Store baseline data in memory for performance
+
 let baselineData = null;
 
 figma.ui.onmessage = async (message) => {
   try {
     if (message.type === 'scan-selection') {
-      // Send loading state to UI
+      
       figma.ui.postMessage({ type: 'scan-started' });
       
       const nodes = message.selectedOnly && figma.currentPage.selection.length > 0 
@@ -41,18 +41,18 @@ async function scanNodes(nodes) {
   const errors = [];
   let processedCount = 0;
 
-  // Load baseline data if not already loaded
+  
   if (!baselineData) {
     baselineData = await getBaselineData();
   }
 
-  // Process nodes with progress tracking
+
   for (const node of nodes) {
     try {
       await processNode(node, scannedItems, errors);
       processedCount++;
       
-      // Send progress updates for large scans
+      
       if (nodes.length > 10 && processedCount % 5 === 0) {
         figma.ui.postMessage({
           type: 'scan-progress',
@@ -83,10 +83,10 @@ async function scanNodes(nodes) {
 }
 
 async function processNode(node, scannedItems, errors) {
-  // Skip invisible nodes
+  
   if (node.visible === false) return;
 
-  // Process fills with error handling
+  
   if (node.fills && Array.isArray(node.fills)) {
     try {
       const fills = node.fills.filter(fill => 
@@ -114,7 +114,7 @@ async function processNode(node, scannedItems, errors) {
     }
   }
 
-  // Process strokes with error handling
+  
   if (node.strokes && Array.isArray(node.strokes)) {
     try {
       const strokes = node.strokes.filter(stroke => 
@@ -142,7 +142,7 @@ async function processNode(node, scannedItems, errors) {
     }
   }
 
-  // Process children recursively with error handling
+  
   if (node.children && Array.isArray(node.children)) {
     for (const child of node.children) {
       try {
@@ -168,7 +168,7 @@ function rgbToHex(color) {
     const g = Math.round(color.g * 255);
     const b = Math.round(color.b * 255);
     
-    // Handle potential NaN values
+    
     if (isNaN(r) || isNaN(g) || isNaN(b)) {
       throw new Error('Invalid RGB values');
     }
@@ -204,7 +204,7 @@ async function findNearestToken(hexColor) {
         }
       } catch (tokenError) {
         console.warn(`Error processing token ${tokenName}:`, tokenError);
-        // Continue with other tokens
+        
       }
     }
     
@@ -227,13 +227,13 @@ async function findNearestToken(hexColor) {
 
 function calculateColorDistance(hex1, hex2) {
   try {
-    // Validate hex colors
+    
     const hexRegex = /^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/;
     if (!hexRegex.test(hex1) || !hexRegex.test(hex2)) {
       throw new Error('Invalid hex color format');
     }
 
-    // Normalize to 6-digit hex
+  
     const normalizeHex = (hex) => {
       if (hex.length === 4) {
         return '#' + hex[1] + hex[1] + hex[2] + hex[2] + hex[3] + hex[3];
